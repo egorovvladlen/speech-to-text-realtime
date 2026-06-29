@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Realtime Translator</title>
+    <link rel="stylesheet" href="/static/styles.css">
+  </head>
+  <body>
+    <header class="topbar">
+      <div>
+        <h1>Realtime Translator</h1>
+        <div id="subtitle" class="subtitle">Speaker loopback -> text -> translation</div>
+      </div>
+      <div class="actions">
+        <span id="status-pill" class="pill">offline</span>
+        <button id="start-btn" type="button">Start</button>
+        <button id="stop-btn" type="button" class="secondary">Stop</button>
+      </div>
+    </header>
+
+    <main class="layout">
+      <section class="panel transcript-panel">
+        <div class="panel-head">
+          <h2>Conversation</h2>
+          <div class="panel-actions">
+            <span id="meter">RMS 0.000</span>
+            <button id="clear-conversation-btn" type="button" class="small secondary">Clear</button>
+          </div>
+        </div>
+        <div id="events" class="events"></div>
+      </section>
+
+      <aside class="panel side-panel">
+        <div class="panel-head">
+          <h2>Suggestions</h2>
+          <div class="panel-actions">
+            <select id="suggestions-language-select" class="small-select" aria-label="Suggestions language">
+              <option value="target">Target</option>
+              <option value="source">Original</option>
+              <option value="Russian">Russian</option>
+              <option value="English">English</option>
+              <option value="German">German</option>
+              <option value="Spanish">Spanish</option>
+              <option value="French">French</option>
+            </select>
+            <button id="clear-suggestions-btn" type="button" class="small secondary">Clear</button>
+            <button id="refresh-kb-btn" type="button" class="small secondary">Refresh KB</button>
+          </div>
+        </div>
+        <div id="suggestions" class="suggestions"></div>
+      </aside>
+
+      <section class="panel settings-panel">
+        <div class="panel-head">
+          <h2>Settings</h2>
+        </div>
+        <dl id="settings" class="settings"></dl>
+      </section>
+    </main>
+
+    <script src="/static/app.js"></script>
+  </body>
+</html>

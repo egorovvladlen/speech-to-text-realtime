@@ -1,0 +1,8 @@
+.env
+.venv/
+.translator.pid
+logs/
+knowledge_base/
+__pycache__/
+*.pyc
+.pytest_cache/
